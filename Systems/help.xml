@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <title>A 24 Viking</title>
+  <line>______________________________________________</line>
+  <key>
+    <name>}</name>
+    <desc>AutoStart/AutoStop</desc>
+  </key>
+  <key>
+    <name>d</name>
+    <desc>Open/Close crew door</desc>
+  </key>
+  <key>
+    <name>shift+d (D)</name>
+    <desc>Open/Close passenger door</desc>
+  </key>
+  <key>
+    <name>shift+q (Q)</name>
+    <desc>Reset view</desc>
+  </key>
+
+</PropertyList>

@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <name>ThePilot</name>
+    <path>pilot.xml</path>
+    <offsets>
+      <x-m> -1.776 </x-m>
+      <y-m> -0.261 </y-m>
+      <z-m> -0.616 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>ThePilot</object-name>
+    <condition>
+      <not-equals>
+        <property>sim/current-view/name</property>
+        <value>Cockpit View</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+  <model>
+    <name>ThePassenger</name>
+    <path>pilot.xml</path>
+    <offsets>
+      <x-m> -1.776 </x-m>
+      <y-m>  0.261 </y-m>
+      <z-m> -0.616 </z-m>
+    </offsets>
+  </model>
+
+  <animation>
+    <type>select</type>
+    <object-name>ThePassenger</object-name>
+    <condition>
+      <not-equals>
+        <property>sim/current-view/name</property>
+        <value>Passenger Seat View</value>
+      </not-equals>
+    </condition>
+  </animation>
+
+</PropertyList>

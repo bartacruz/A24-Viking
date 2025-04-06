@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <model>
+    <path>cranking.xml</path>
+    <offsets>
+      <x-m> -1.312 </x-m>
+      <y-m> -0.350 </y-m>
+      <z-m>  0.782 </z-m>
+      <pitch-deg> -45 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

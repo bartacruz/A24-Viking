@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <!-- Center -->
+  <model>
+    <path>wake.xml</path>
+    <offsets>
+      <x-m>         -3.003 </x-m>
+      <y-m>         -0.403 </y-m>
+      <z-m>         -0.912 </z-m>
+      <heading-deg> -40 </heading-deg>
+      <pitch-deg>   -20 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>wake.xml</path>
+    <offsets>
+      <x-m>         -3.003 </x-m>
+      <y-m>          0.403 </y-m>
+      <z-m>         -0.912 </z-m>
+      <heading-deg> 40 </heading-deg>
+      <pitch-deg>  -20 </pitch-deg>
+    </offsets>
+  </model>
+
+  <model>
+    <path>wake.xml</path>
+    <offsets>
+      <x-m>        -0.576 </x-m>
+      <y-m>         0.000 </y-m>
+      <z-m>        -1.068 </z-m>
+      <pitch-deg> -10 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Left float -->
+  <model>
+    <path>wakeG.xml</path>
+    <offsets>
+      <x-m>        -0.903 </x-m>
+      <y-m>        -4.399 </y-m>
+      <z-m>        -0.402 </z-m>
+      <pitch-deg> -10 </pitch-deg>
+    </offsets>
+  </model>
+
+  <!-- Right float -->
+  <model>
+    <path>wakeD.xml</path>
+    <offsets>
+      <x-m>        -0.903 </x-m>
+      <y-m>         4.399 </y-m>
+      <z-m>        -0.402 </z-m>
+      <pitch-deg> -10 </pitch-deg>
+    </offsets>
+  </model>
+
+</PropertyList>

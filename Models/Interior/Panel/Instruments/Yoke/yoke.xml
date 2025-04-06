@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>yoke.ac</path>
+
+  <animation>
+    <object-name>yoke</object-name>
+  </animation>
+
+  <animation>
+    <type>translate</type>
+    <object-name>yoke</object-name>
+    <property>controls/flight/elevator</property>
+    <factor> -0.1 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>yoke</object-name>
+    <property>controls/flight/aileron</property>
+    <factor> -45 </factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- Yokes visible ou non -->
+  <animation>
+    <type>select</type>
+    <object-name>yoke</object-name>
+    <condition>
+      <property>/sim/model/show-yoke</property>
+    </condition>
+  </animation>
+
+</PropertyList>

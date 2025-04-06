@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList     include="Systems/a24-base.xml">
+
+  <sim>
+
+    <description>A 24 Viking (YASim)</description>
+    <authors>
+      <author     n="0">
+        <name     type="string">BARANGER Emmanuel (3D,FDM)</name>
+      </author>
+      <author     n="1">
+        <name     type="string">Laurent HAYVEL (Livery)</name>
+      </author>
+    </authors>
+
+    <aircraft-version>0.5</aircraft-version>
+    <status>Alpha</status>
+    <minimum-fg-version>2018.2.0</minimum-fg-version>
+
+    <flight-model archive="y">yasim</flight-model>
+    <aero         archive="y">Systems/a24-yasim</aero>
+
+    <rating>
+      <FDM        type="int"> 3 </FDM>
+      <systems    type="int"> 1 </systems>
+      <cockpit    type="int"> 2 </cockpit>
+      <model      type="int"> 4 </model>
+    </rating>
+
+    <previews>
+      <preview>
+        <type>interior</type>
+        <splash   type="bool">true</splash>
+        <path>Previews/viking-0.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash   type="bool">true</splash>
+        <path>Previews/viking-1.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash   type="bool">true</splash>
+        <path>Previews/viking-2.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash   type="bool">true</splash>
+        <path>Previews/viking-3.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash   type="bool">true</splash>
+        <path>Previews/viking-4.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash   type="bool">true</splash>
+        <path>Previews/viking-5.png</path>
+      </preview>
+      <preview>
+        <type>exterior</type>
+        <splash   type="bool">true</splash>
+        <path>Previews/viking-6.png</path>
+      </preview>
+    </previews>
+
+    <tags>
+      <tag>aeroprakt</tag>
+      <tag>2010s</tag>
+      <tag>amphibious</tag>
+      <tag>tail-dragger</tag>
+      <tag>propeller</tag>
+      <tag>piston</tag>
+      <tag>single-engine</tag>
+      <tag>fixed-pitch</tag>
+      <tag>compositor</tag>
+      <tag>HDR</tag>
+    </tags>
+
+  </sim>
+
+</PropertyList>

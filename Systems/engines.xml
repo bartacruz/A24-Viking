@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <engine                 n="0">
+    <engine-num           type="int">0</engine-num>
+    <rpm                  type="float">0</rpm>
+    <running              type="bool">false</running>
+    <fuel-flow-pph        type="float">0.0</fuel-flow-pph>
+    <state                type="int">0</state>
+    <mp-osi               type="float">0</mp-osi>
+    <cht-degC             type="float">0</cht-degC>
+    <egt-degC             type="float">0</egt-degC>
+    <egt-degf             type="float">40</egt-degf>
+    <oil-temperature-degC type="float">0</oil-temperature-degC>
+  </engine>
+
+</PropertyList>
