@@ -1,0 +1,64 @@
+AC3Db
+MATERIAL "DefaultWhite.004" rgb 1.000 1.000 1.000  amb 0.800 0.800 0.800  emis 0.000 0.000 0.000  spec 0.500 0.500 0.500  shi 64 trans 0.000
+OBJECT world
+name "Blender_exporter_v6.1__pedestal-instruments.ac"
+kids 1
+OBJECT poly
+name "PedestalInstruments"
+data 8
+Cube.001
+crease 40.0
+texture "pedestal.png"
+numvert 8
+-0.47914 0.15742 0.06
+-0.54918 0.34475 0.06
+-0.47914 0.15742 -0.06
+-0.54918 0.34475 -0.06
+-0.47445 0.15917 0.06
+-0.54449 0.3465 0.06
+-0.47445 0.15917 -0.06
+-0.54449 0.3465 -0.06
+numsurf 6
+SURF 0X0
+mat 0
+refs 4
+0 0.375 0
+1 0.625 0
+3 0.625 0.25
+2 0.375 0.25
+SURF 0X0
+mat 0
+refs 4
+2 0.375 0.25
+3 0.625 0.25
+7 0.625 0.5
+6 0.375 0.5
+SURF 0X0
+mat 0
+refs 4
+6 0.375 0.5
+7 0.625 0.5
+5 0.625 0.75
+4 0.375 0.75
+SURF 0X0
+mat 0
+refs 4
+4 0.375 0.75
+5 0.625 0.75
+1 0.625 1
+0 0.375 1
+SURF 0X0
+mat 0
+refs 4
+2 0.125 0.5
+6 0.375 0.5
+4 0.375 0.75
+0 0.125 0.75
+SURF 0X0
+mat 0
+refs 4
+7 0.625 0.5
+3 0.875 0.5
+1 0.875 0.75
+5 0.625 0.75
+kids 0

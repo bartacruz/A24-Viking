@@ -19,6 +19,7 @@
       <livery>
         <file        type="string"></file>
       </livery>
+      <show-yoke type="bool">1</show-yoke>
     </model>
 
     <systems         include="rules.xml"/>
