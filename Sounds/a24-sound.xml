@@ -627,9 +627,17 @@
             <value>46</value>
           </less-than>
           <not>
-            <property>gear/gear[0]/wow</property>
-            <property>gear/gear[1]/wow</property>
-            <property>gear/gear[2]/wow</property>
+            <or>
+              <and>
+                <property>gear/gear[0]/wow</property>
+                <property>gear/gear[1]/wow</property>
+                <property>gear/gear[2]/wow</property>
+              </and>
+              <and>
+                <property>gear/gear[3]/wow</property>
+                <property>gear/gear[4]/wow</property>
+              </and>
+            </or>
           </not>
         </and>
       </condition>
