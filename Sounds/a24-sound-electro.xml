@@ -1,0 +1,684 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <fx>
+    <engine>
+        <name>engine</name>
+        <mode>looped</mode>
+        <path>Aircraft/A24-Viking/Sounds/electric_engine.wav</path>
+        <property>/engines/engine[0]/rpm</property>
+        <volume>
+            <property>/engines/engine[0]/rpm</property>
+            <min>0.0</min>
+            <max>0.9</max>
+            <factor>0.001</factor>
+        </volume>
+        <!-- <volume>
+            <property>/fdm/jsbsim/propulsion/engine[0]/power-hp</property>
+            <min>0.3</min>
+            <max>0.9</max>
+            <factor>0.01</factor>
+        </volume>-->
+        <volume>
+            <property>/sim/current-view/internal</property>
+            <offset>1.0</offset>
+            <factor>0.4</factor>
+        </volume>
+        <pitch>
+            <property>/engines/engine[0]/rpm</property>
+            <factor>0.00019</factor>
+            <min>0.0</min>
+            <max>1.0</max>
+            <offset>0.1</offset>
+        </pitch>
+        <position>
+            <x>-2.5</x>
+            <y>0.0</y>
+            <z>0.0</z>
+        </position>
+        <reference-dist>2.0</reference-dist>
+        <max-dist>2000.0</max-dist>
+    </engine>
+    <propeller>
+        <name>propeller</name>
+        <mode>looped</mode>
+        <path>Sounds/prop.wav</path>
+        <property>/engines/engine[0]/rpm</property>
+        <condition>
+            <greater-than>
+                <property>/engines/engine/rpm</property>
+                <value>10</value>
+            </greater-than>
+        </condition>
+        <volume>
+            <property>/engines/engine/rpm</property>
+            <factor>0.0005</factor>
+            <offset>-0.4</offset>
+            <max>0.25</max>
+        </volume>
+        <volume>
+            <property>/engines/engine/thrust_lb</property>
+            <factor>0.005</factor>
+        </volume>
+        <volume>
+            <property>/sim/current-view/internal</property>
+            <offset>1.0</offset>
+            <factor>0.3</factor>
+        </volume>
+        <pitch>
+            <property>/engines/engine/rpm</property>
+            <factor>0.0003</factor>
+            <min>0.0</min>
+            <max>2.0</max>
+            <offset>0.01</offset>
+        </pitch>
+        <position>
+            <x> -2.636 </x>
+            <y>  0.000 </y>
+            <z>  0.689 </z>
+        </position>
+        <reference-dist>2.0</reference-dist>
+        <max-dist>2000.0</max-dist>
+    </propeller>
+    
+    <rumble>
+      <name>rumble Front</name>
+      <mode>looped</mode>
+      <path>Rotax912-Rumble.wav</path>
+      <condition>
+        <or>
+          <property>gear/gear[0]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>velocities/groundspeed-kt</property>
+        <type>log</type>
+        <factor>0.05</factor>
+        <min>0.00</min>
+        <max>0.25</max>
+      </volume>
+      <position>
+        <x> -22 </x>
+        <y>   0 </y>
+        <z>  -5 </z>
+      </position>
+      <reference-dist>10.0</reference-dist>
+      <max-dist>25.0</max-dist>
+    </rumble>
+
+    <rumble>
+      <name>rumble Right</name>
+      <mode>looped</mode>
+      <path>Rotax912-Rumble.wav</path>
+      <condition>
+        <or>
+          <property>gear/gear[1]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>velocities/groundspeed-kt</property>
+        <type>log</type>
+        <factor>0.05</factor>
+        <min>0.00</min>
+        <max>0.25</max>
+      </volume>
+      <position>
+        <x> -6.5 </x>
+        <y> -8.0 </y>
+        <z> -5.0 </z>
+      </position>
+      <reference-dist>20.0</reference-dist>
+      <max-dist>40.0</max-dist>
+    </rumble>
+
+    <rumble>
+      <name>rumble Left</name>
+      <mode>looped</mode>
+      <path>Rotax912-Rumble.wav</path>
+      <condition>
+        <or>
+          <property>gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>velocities/groundspeed-kt</property>
+        <type>log</type>
+        <factor>0.05</factor>
+        <min>0.00</min>
+        <max>0.25</max>
+      </volume>
+      <position>
+        <x> -6.5 </x>
+        <y>  8.0 </y>
+        <z> -5.0 </z>
+      </position>
+      <reference-dist>20.0</reference-dist>
+      <max-dist>40.0</max-dist>
+    </rumble>
+
+    <squeal>
+      <name>squeal Front</name>
+      <mode>once</mode>
+      <path>Rotax912-Tire-Squeal.wav</path>
+      <condition>
+        <or>
+          <property>gear/gear[0]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>sim/model/sound/volume</property>
+      </volume>
+      <volume>
+        <property>velocities/speed-down-fps</property>
+        <factor>0.5</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <position>
+        <x> -22 </x>
+        <y>   0 </y>
+        <z>  -5 </z>
+      </position>
+      <reference-dist>20.0</reference-dist>
+      <max-dist>40.0</max-dist>
+    </squeal>
+
+    <squeal>
+      <name>squeal Right</name>
+      <mode>once</mode>
+      <path>Rotax912-Tire-Squeal.wav</path>
+      <condition>
+        <or>
+          <property>gear/gear[1]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>velocities/speed-down-fps</property>
+        <factor>0.5</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <position>
+        <x> -6.5 </x>
+        <y> -8.0 </y>
+        <z> -5.0 </z>
+      </position>
+      <reference-dist>20.0</reference-dist>
+      <max-dist>40.0</max-dist>
+    </squeal>
+
+    <squeal>
+      <name>squeal Left</name>
+      <mode>once</mode>
+      <path>Rotax912-Tire-Squeal.wav</path>
+      <condition>
+        <or>
+          <property>gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <property>velocities/speed-down-fps</property>
+        <factor>0.5</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <internal>dt_stop</internal>
+        <factor>0.05</factor>
+        <max>1.0</max>
+      </volume>
+      <pitch>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <position>
+        <x> -6.5 </x>
+        <y>  8.0 </y>
+        <z> -5.0 </z>
+      </position>
+      <reference-dist>20.0</reference-dist>
+      <max-dist>40.0</max-dist>
+    </squeal>
+
+    <squeal>
+      <name>Brakes</name>
+      <mode>once</mode>
+      <path>Rotax912-Tire-Squeal.wav</path>
+      <condition>
+        <and>
+          <property>gear/gear[0]/wow</property>
+          <property>gear/gear[1]/wow</property>
+          <property>gear/gear[2]/wow</property>
+          <or>
+            <greater-than>
+              <property>controls/gear/brake-right</property>
+              <value>0</value>
+            </greater-than>
+            <greater-than>
+              <property>controls/gear/brake-left</property>
+              <value>0</value>
+            </greater-than>
+            <greater-than>
+              <property>controls/gear/brake-parking</property>
+              <value>0</value>
+            </greater-than>
+          </or>
+        </and>
+      </condition>
+      <volume>
+        <property>velocities/groundspeed-kt</property>
+        <type>log</type>
+        <factor>0.05</factor>
+        <min>0.00</min>
+        <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>velocities/groundspeed-kt</property>
+        <factor>0.0025</factor>
+        <offset>1.2</offset>
+      </pitch>
+      <reference-dist>20.0</reference-dist>
+      <max-dist>40.0</max-dist>
+    </squeal>
+
+    <contact>
+      <name>ground contact Front</name>
+      <mode>once</mode>
+      <path>Rotax912-Ground_contact.wav</path>
+      <max-dist>10</max-dist>
+      <reference-dist>5</reference-dist>
+      <condition>
+        <or>
+          <property>gear/gear[0]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <factor>0.2</factor>
+      </volume>
+      <pitch>
+        <factor>0.01</factor>
+      </pitch>
+      <position>
+        <x> -22 </x>
+        <y>   0 </y>
+        <z>  -5 </z>
+      </position>
+      <max-dist>5.0</max-dist>
+      <max-dist>10.0</max-dist>
+    </contact>
+
+    <contact>
+      <name>ground contact Right</name>
+      <mode>once</mode>
+      <path>Rotax912-Ground_contact.wav</path>
+      <max-dist>10</max-dist>
+      <reference-dist>5</reference-dist>
+      <condition>
+        <or>
+          <property>gear/gear[1]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <factor>0.2</factor>
+      </volume>
+      <pitch>
+        <factor>0.01</factor>
+      </pitch>
+      <position>
+        <x>-6.5</x>
+        <y>-8</y>
+        <z>-5</z>
+      </position>
+      <max-dist>5.0</max-dist>
+      <max-dist>10.0</max-dist>
+    </contact>
+
+    <contact>
+      <name>ground contact Left</name>
+      <mode>once</mode>
+      <path>Rotax912-Ground_contact.wav</path>
+      <max-dist>10</max-dist>
+      <reference-dist>5</reference-dist>
+      <condition>
+        <or>
+          <property>gear/gear[2]/wow</property>
+        </or>
+      </condition>
+      <volume>
+        <factor>0.2</factor>
+      </volume>
+      <pitch>
+        <factor>0.01</factor>
+      </pitch>
+      <position>
+        <x>-6.5</x>
+        <y>8</y>
+        <z>-5</z>
+      </position>
+      <max-dist>5.0</max-dist>
+      <max-dist>10.0</max-dist>
+    </contact>
+
+    <flap>
+      <name>flaps</name>
+      <mode>in-transit</mode>
+      <path>Rotax912-Flaps.wav</path>
+      <property>surface-positions/flap-pos-norm</property>
+      <volume>
+        <factor>0.8</factor>
+      </volume>
+      <reference-dist>10.0</reference-dist>
+      <max-dist>20.0</max-dist>
+    </flap>
+
+    <wind>
+      <name>wind</name>
+      <mode>looped</mode>
+      <path>Rotax912-Wind.wav</path>
+      <condition>
+        <and>
+          <property>velocities/airspeed-kt</property>
+          <or>
+            <greater-than>
+              <property>sim/model/door-positions/crew/position-norm</property>
+              <value>0</value>
+            </greater-than>
+            <greater-than>
+              <property>sim/model/door-positions/passenger/position-norm</property>
+              <value>0</value>
+            </greater-than>
+            <not>
+              <property>sim/current-view/internal</property>
+            </not>
+          </or>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>position/altitude-ft</property>
+        <factor>-0.000015</factor>
+        <offset>1.0</offset>
+        <min>0.1</min>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.0015</factor>
+        <min>0.03</min>
+        <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>3</reference-dist>
+      <max-dist>4</max-dist>
+    </wind>
+
+    <wind>
+      <name>wind-internal</name>
+      <mode>looped</mode>
+      <path>Rotax912-Wind.wav</path>
+      <condition>
+        <and>
+          <property>velocities/airspeed-kt</property>
+          <or>
+            <equals>
+              <property>sim/model/door-positions/crew/position-norm</property>
+              <value>0</value>
+            </equals>
+            <equals>
+              <property>sim/model/door-positions/passenger/position-norm</property>
+              <value>0</value>
+            </equals>
+          </or>
+          <not>
+            <property>sim/crashed</property>
+          </not>
+        </and>
+      </condition>
+      <volume>
+        <property>position/altitude-ft</property>
+        <factor>-0.000015</factor>
+        <offset>1.0</offset>
+        <min>0.1</min>
+        <max>1.0</max>
+      </volume>
+      <volume>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.0015</factor>
+        <min>0.00</min>
+        <max>0.25</max>
+      </volume>
+      <pitch>
+        <property>velocities/airspeed-kt</property>
+        <factor>0.01</factor>
+        <offset>1.25</offset>
+      </pitch>
+      <reference-dist>3</reference-dist>
+      <max-dist>4</max-dist>
+    </wind>
+
+    <crash>
+      <name>intense ground contact</name>
+      <mode>once</mode>
+      <path>Rotax912-Explosion.wav</path>
+      <property>sim/crashed</property>
+      <volume>
+        <factor>1</factor>
+      </volume>
+      <pitch>
+        <factor>0.1</factor>
+      </pitch>
+      <reference-dist>100</reference-dist>
+      <max-dist>500</max-dist>
+    </crash>
+
+    <stall>
+      <name>stall</name>
+      <mode>looped</mode>
+      <path>Rotax912-Stall.wav</path>
+      <condition>
+        <and>
+          <property>controls/electric/battery-switch</property>
+          <less-than>
+            <property>velocities/airspeed-kt</property>
+            <value>46</value>
+          </less-than>
+          <not>
+            <or>
+              <and>
+                <property>gear/gear[0]/wow</property><!-- On land-->
+                <property>gear/gear[1]/wow</property>
+                <!-- <property>gear/gear[2]/wow</property> -->
+              </and>
+              <property>gear/gear[4]/wow</property> <!-- On water-->
+            </or>
+          </not>
+        </and>
+      </condition>
+      <reference-dist>4.0</reference-dist>
+      <max-dist>10.0</max-dist>
+    </stall>
+
+    <door>
+      <name>close crew frontdoor</name>
+      <mode>once</mode>
+      <path>Rotax912-Door_close.wav</path>
+      <condition>
+        <equals>
+          <property>sim/model/door-positions/crew/position-norm</property>
+          <value>0</value>
+        </equals>
+      </condition>
+      <position>
+        <x>  1.0 </x>
+        <y>  1.5 </y>
+        <z> -1.5 </z>
+      </position>
+      <volume>
+        <factor>0.3</factor>
+      </volume>
+      <reference-dist>15</reference-dist>
+      <max-dist>50</max-dist>
+    </door>
+
+    <door>
+      <name>close passenger frontdoor</name>
+      <mode>once</mode>
+      <path>Rotax912-Door_close.wav</path>
+      <condition>
+        <equals>
+          <property>sim/model/door-positions/passenger/position-norm</property>
+          <value>0</value>
+        </equals>
+      </condition>
+      <position>
+        <x> -1.0 </x>
+        <y>  1.5 </y>
+        <z> -1.5 </z>
+      </position>
+      <volume>
+        <factor>0.3</factor>
+      </volume>
+      <reference-dist>15</reference-dist>
+      <max-dist>50</max-dist>
+    </door>
+
+    <door>
+      <name>open crew frontdoor</name>
+      <mode>once</mode>
+      <path>Rotax912-Door_open.wav</path>
+      <condition>
+        <greater-than>
+          <property>sim/model/door-positions/crew/position-norm</property>
+          <value>0</value>
+        </greater-than>
+      </condition>
+      <position>
+        <x>  1.0 </x>
+        <y>  1.5 </y>
+        <z> -1.5 </z>
+      </position>
+      <volume>
+        <factor>0.3</factor>
+      </volume>
+      <reference-dist>15</reference-dist>
+      <max-dist>50</max-dist>
+    </door>
+
+    <door>
+      <name>open passenger frontdoor</name>
+      <mode>once</mode>
+      <path>Rotax912-Door_open.wav</path>
+      <condition>
+        <greater-than>
+          <property>sim/model/door-positions/passenger/position-norm</property>
+          <value>0</value>
+        </greater-than>
+      </condition>
+      <position>
+        <x> -1.0 </x>
+        <y>  1.5 </y>
+        <z> -1.5 </z>
+      </position>
+      <volume>
+        <factor>0.3</factor>
+      </volume>
+      <reference-dist>15</reference-dist>
+      <max-dist>50</max-dist>
+    </door>
+
+    <!--                  Toggle Switches                  -->
+    <click>
+      <name>switches on</name>
+      <mode>once</mode>
+      <path>Rotax912-Click.wav</path>
+      <max-dist>2</max-dist>
+      <reference-dist>1</reference-dist>
+      <condition>
+        <property>sim/model/sound/click</property>
+      </condition>
+      <position>
+        <x>  1.5 </x>
+        <y>  0.0 </y>
+        <z> -1.8 </z>
+      </position>
+    </click>
+
+    <click>
+      <name>switches off</name>
+      <mode>once</mode>
+      <path>Rotax912-Click.wav</path>
+      <max-dist>2</max-dist>
+      <reference-dist>1</reference-dist>
+      <condition>
+        <not>
+          <property>sim/model/sound/click</property>
+        </not>
+      </condition>
+      <position>
+        <x>  1.5 </x>
+        <y>  0.0 </y>
+        <z> -1.8 </z>
+      </position>
+    </click>
+
+  </fx>
+  <contact>
+    <name>gear 4</name>
+    <mode>looped</mode>
+    <path>Sounds/water-fast.wav</path>
+    <condition>
+      <property>gear/gear[4]/wow</property>
+    </condition>
+    <position>
+        <x>0.878</x>
+        <y>0</y>
+        <z>-1.23</z>
+    </position>
+    <reference-dist>5.0</reference-dist>
+    <max-dist>200.0</max-dist>
+    <volume>
+      <factor>0.2</factor>
+    </volume>
+  </contact>
+
+</PropertyList>

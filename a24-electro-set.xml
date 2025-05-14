@@ -3,8 +3,8 @@
 <PropertyList     include="Systems/a24-base.xml">
 
   <sim>
-
-    <description>A 24 Viking (YASim)</description>
+    <variant-of>a24</variant-of>
+    <description>A 24 Viking Electro (YASim)</description>
     <authors>
       <author     n="0">
         <name     type="string">BARANGER Emmanuel (3D,FDM)</name>
@@ -12,15 +12,23 @@
       <author     n="1">
         <name     type="string">Laurent HAYVEL (Livery)</name>
       </author>
+      <author     n="2">
+        <name     type="string">Julio Santa Cruz</name>
+      </author>
     </authors>
+    <model>
+        <variant type="int">1</variant>
+    </model>
 
     <aircraft-version>0.5</aircraft-version>
     <status>Alpha</status>
     <minimum-fg-version>2018.2.0</minimum-fg-version>
 
     <flight-model archive="y">yasim</flight-model>
-    <aero         archive="y">Systems/a24-yasim</aero>
-
+    <aero         archive="y">Systems/a24-yasim-electro</aero>
+    <sound>
+        <path          archive="y">Aircraft/A24-Viking/Sounds/a24-sound-electro.xml</path>
+    </sound>
     <rating>
       <FDM        type="int"> 3 </FDM>
       <systems    type="int"> 1 </systems>
@@ -65,9 +73,7 @@
         <path>Previews/viking-6.png</path>
       </preview>
     </previews>
-    <model>
-      <variant type="int">0</variant>
-    </model>
+
     <tags>
       <tag>aeroprakt</tag>
       <tag>2010s</tag>
