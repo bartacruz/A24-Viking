@@ -629,14 +629,11 @@
           <not>
             <or>
               <and>
-                <property>gear/gear[0]/wow</property>
+                <property>gear/gear[0]/wow</property><!-- On land-->
                 <property>gear/gear[1]/wow</property>
-                <property>gear/gear[2]/wow</property>
+                <!-- <property>gear/gear[2]/wow</property> -->
               </and>
-              <and>
-                <property>gear/gear[3]/wow</property>
-                <property>gear/gear[4]/wow</property>
-              </and>
+              <property>gear/gear[4]/wow</property> <!-- On water-->
             </or>
           </not>
         </and>
@@ -769,5 +766,23 @@
     </click>
 
   </fx>
+  <contact>
+    <name>gear 4</name>
+    <mode>looped</mode>
+    <path>Sounds/water-fast.wav</path>
+    <condition>
+      <property>gear/gear[4]/wow</property>
+    </condition>
+    <position>
+        <x>0.878</x>
+        <y>0</y>
+        <z>-1.23</z>
+    </position>
+    <reference-dist>5.0</reference-dist>
+    <max-dist>200.0</max-dist>
+    <volume>
+      <factor>0.2</factor>
+    </volume>
+  </contact>
 
 </PropertyList>
