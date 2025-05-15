@@ -91,12 +91,18 @@
     <doors>
       <file>Aircraft/A24-Viking/Nasal/doors.nas</file>
     </doors>
+    <updateloop>
+      <file>Aircraft/Generic/updateloop.nas</file>
+    </updateloop>
+     <electric>
+        <file>Nasal/electric.nas</file>
+    </electric>
     <a24>
       <file>Aircraft/A24-Viking/Nasal/hdr.nas</file>
       <file>Aircraft/A24-Viking/Nasal/liveries.nas</file>
       <file>Aircraft/A24-Viking/Nasal/light.nas</file>
       <file>Aircraft/A24-Viking/Nasal/convert.nas</file>
-      <file>Aircraft/A24-Viking/Nasal/Electrical.nas</file>
+      <file>Aircraft/A24-Viking/Nasal/electrical.nas</file>
     </a24>
     <water>
       <file>Aircraft/A24-Viking/Nasal/onwater.nas</file>

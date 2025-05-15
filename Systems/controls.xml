@@ -14,7 +14,9 @@
   </lighting>
 
   <electric>
+    <master-switch    type="bool">false</master-switch>
     <battery-switch    type="bool">false</battery-switch>
+    <alt-switch    type="bool">false</alt-switch>
     <avionics-switch   type="bool">false</avionics-switch>
     <engines>
       <engine          n="0">
@@ -28,6 +30,8 @@
       <on              type="bool">false</on>
       <mixture         archive="y"> 0.65 </mixture>
       <magnetos        type="int">0</magnetos>
+      <fuel-pump n="0"        type="bool">0</fuel-pump>
+      <fuel-pump n="1"        type="bool">0</fuel-pump>
     </engine>
   </engines>
 

@@ -5,5 +5,13 @@
   <property-rule n="100">
     <path>Aircraft/A24-Viking/Systems/glass-rain.xml</path>
   </property-rule>
-
+  <vacuum>
+    <name>vacuum</name>
+    <number>0</number>
+    <rpm>/engines/engine[0]/rpm</rpm>
+    <scale>0.440</scale>
+  </vacuum>
+  <electrical>
+    <path></path>
+  </electrical>
 </PropertyList>
