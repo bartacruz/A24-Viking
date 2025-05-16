@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>key.ac</path>
+
+  <animation>
+    <object-name>fond</object-name>
+    <object-name>key</object-name>
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>fond</object-name>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>key</object-name>
+    <object-name>fond</object-name>
+    <!--
+    If no key, left button clicking will insert key
+    else:
+       Left button will engage starter
+       Middle button will remove key.
+    -->
+    <action>
+      <button>0</button>
+      <binding> <!-- Starter -->
+        <condition>
+          <property>/controls/switches/starterkey-insert</property>
+        </condition>
+        <command>property-assign</command>
+        <property>/controls/switches/starter</property>
+        <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/starter</property>
+          <value>0</value>
+        </binding>
+      </mod-up>
+
+      <binding><!-- Key insert -->
+        <condition>
+          <not>
+            <property>/controls/switches/starterkey-insert</property>
+          </not>
+        </condition>
+        <command>property-assign</command>
+        <property>/controls/electric/master-switch</property>
+        <value>1</value>
+      </binding>
+      
+      <binding>
+        <condition>
+          <not>
+            <property>/controls/switches/starterkey-insert</property>
+          </not>
+        </condition>
+        <command>property-assign</command>
+        <property>/controls/switches/starterkey-insert</property>
+        <value>1</value>
+      </binding>
+      
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/sound/click</property>
+      </binding>
+    </action>
+
+    <action>
+      <button>1</button>
+      <binding>
+        <condition>
+          <property>/controls/switches/starterkey-insert</property>
+        </condition>
+        <command>property-assign</command>
+        <property>/controls/electric/master-switch</property>
+        <value>0</value>  
+      </binding>
+      <binding><!-- Key removal -->
+        <condition>
+          <property>/controls/switches/starterkey-insert</property>
+        </condition>
+        <command>property-assign</command>
+        <property>/controls/switches/starterkey-insert</property>
+        <value>0</value>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/sound/click</property>
+      </binding>
+    </action>
+    <hovered>
+      <binding>
+        <command>set-tooltip</command>
+        <tooltip-id>starterkey-insert</tooltip-id>
+        <label>%s</label>
+        <property>/controls/switches/starterkey-insert</property>
+        <mapping>nasal</mapping>
+        <script>
+          var f = getprop("/controls/switches/starterkey-insert");
+          if (f) return 'Click to start, click middle button to remove the key';
+          return "Click to insert the key";
+        </script>
+      </binding>
+    </hovered>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>key</object-name>
+    <object-name>anneau</object-name>
+    <object-name>cle2</object-name>
+    <condition>
+      <property>/controls/switches/starterkey-insert</property>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>rotate</type>
+    <object-name>key</object-name>
+    <property>/controls/switches/starterkey-insert-pos</property>
+    <factor>-30</factor>
+    <axis>
+      <x>1</x>
+      <y>0</y>
+      <z>0</z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>key</object-name>
+    <property>/controls/switches/starter</property>
+    <factor>-60</factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <!-- effects inspired from i16 and Diamond D42 ... -->
+  <animation>
+    <type>rotate</type>
+    <object-name>anneau</object-name>
+    <object-name>cle2</object-name>
+    <property>/instrumentation/slip-skid-ball/indicated-slip-skid</property>
+    <factor>-5.7</factor>
+    <axis>
+      <x> 1 </x>
+      <y> 0 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>anneau</object-name>
+    <object-name>cle2</object-name>
+    <property>/orientation/pitch-deg</property>
+    <interpolation>
+      <entry><ind> -180 </ind><dep>   12 </dep></entry>
+      <entry><ind>  -12 </ind><dep>   12 </dep></entry>
+      <entry><ind>    0 </ind><dep>    0 </dep></entry>
+      <entry><ind>   12 </ind><dep>  -12 </dep></entry>
+      <entry><ind>  180 </ind><dep> -180 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.032 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> 0 </x>
+      <y> 1 </y>
+      <z> 0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>anneau</object-name>
+    <object-name>cle2</object-name>
+    <property>/orientation/roll-deg</property>
+    <interpolation>
+      <entry><ind> -180 </ind><dep>  180 </dep></entry>
+      <entry><ind>  -12 </ind><dep>   12 </dep></entry>
+      <entry><ind>    0 </ind><dep>    0 </dep></entry>
+      <entry><ind>   12 </ind><dep>  -12 </dep></entry>
+      <entry><ind>  180 </ind><dep> -180 </dep></entry>
+    </interpolation>
+    <center>
+      <x-m> 0.032 </x-m>
+      <y-m> 0.000 </y-m>
+      <z-m> 0.000 </z-m>
+    </center>
+    <axis>
+      <x> -1 </x>
+      <y>  0 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <!-- TEXT OSG -->
+  <text>
+    <name>textosg</name>
+    <type type="string">literal</type>
+    <text type="string">Left button to start, right button to remove key</text>
+    <draw-text type="bool">true</draw-text>
+    <font>Helvetica.txf</font>
+    <character-size type="double">0.014</character-size>
+    <character-aspect-ratio type="double">1.0</character-aspect-ratio>
+    <axis-alignment>yz-plane</axis-alignment>
+    <max-height>0.06</max-height>
+    <max-width>0.05</max-width>
+    <font-resolution>
+      <width type="int">64</width>
+      <height type="int">64</height>
+    </font-resolution>
+    <alignment>center-center</alignment>
+    <offsets>
+      <x-m>  0.005 </x-m>
+      <y-m>  0.009 </y-m>
+      <z-m>  0.020 </z-m>
+    </offsets>
+  </text>
+  
+  <animation>
+    <type>material</type>
+    <object-name>textosg</object-name>
+    <emission>
+      <red>   0.8 </red>
+      <green> 0.8 </green>
+      <blue>  0.0 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>textosg</object-name>
+    <condition>
+      <property>/sim/panel-hotspots</property>
+    </condition>
+  </animation>
+</PropertyList>

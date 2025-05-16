@@ -59,7 +59,12 @@
   </animation>
 
   <model>
-    <path>Panel/all-panels.xml</path>
+    <path>Panel/panel.xml</path>
+    <offsets>
+      <x-m> -2.192 </x-m>
+      <y-m>  0.000 </y-m>
+      <z-m> -0.321 </z-m>
+    </offsets>
   </model>
 
   <model>

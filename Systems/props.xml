@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<PropertyList>
+    <filter>
+        <name>fuel-level-norm</name>
+        <update-interval-secs type="double">1</update-interval-secs>
+        <debug>false</debug>
+        <type>gain</type>
+        <input>
+            <expression>
+                <div>
+                    <property>/consumables/fuel/tank/level-gal_us</property>>
+                    <property>/consumables/fuel/tank/capacity-gal_us</property>>
+                </div>
+            </expression>
+        </input>
+        <output>
+            <property>/consumables/fuel/tank/indicated-level-norm</property>>
+        </output>
+    </filter>
+</PropertyList>

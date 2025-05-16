@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>led-square-multi-2.ac</path>
+
+  <animation>
+    <object-name>base</object-name>
+    
+    <!-- <object-name>led</object-name> -->
+  </animation>
+
+  <animation>
+    <type>noshadow</type>
+    <object-name>base</object-name>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>led.green</object-name>
+    <object-name>led.amber</object-name>
+    <object-name>led.red</object-name>
+    <object-name>led.blue</object-name>
+    <condition>
+      <greater-than>
+        <property>systems/electrical/outputs/annunciators</property>
+        <value>6</value>
+      </greater-than>
+    </condition>
+    <emission>
+      <red>   1 </red>
+      <green> 1 </green>
+      <blue>  1 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>material</type>
+    <object-name>led.off</object-name>
+    <emission>
+      <red>   0.1 </red>
+      <green> 0.1 </green>
+      <blue>  0.1 </blue>
+    </emission>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led.amber</object-name>
+    <condition>
+      <equals>
+        <property>surface-positions/flap-pos-norm</property>
+        <value>1</value>
+      </equals>
+    </condition>
+  </animation>
+  
+  <animation>
+    <type>select</type>
+    <object-name>led.green</object-name>
+    <condition>
+      <equals>
+        <property>surface-positions/flap-pos-norm</property>
+        <value>0.5</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led.red</object-name>
+    <condition>
+      <not>
+        <or>
+          <equals>
+            <property>surface-positions/flap-pos-norm</property>
+            <value>0</value>
+          </equals>    
+          <equals>
+            <property>surface-positions/flap-pos-norm</property>
+            <value>0.5</value>
+          </equals>
+          <equals>
+            <property>surface-positions/flap-pos-norm</property>
+            <value>1</value>
+          </equals>
+        </or>
+      </not>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led.off</object-name>
+    <condition>
+      <equals>
+        <property>surface-positions/flap-pos-norm</property>
+        <value>0</value>
+      </equals>
+    </condition>
+  </animation>
+
+  <animation>
+    <type>select</type>
+    <object-name>led.blue</object-name>
+    <condition>
+      <equals>
+        <property>surface-positions/flap-pos-norm</property>
+        <value>3232323232</value>
+      </equals>
+    </condition>
+  </animation>
+
+</PropertyList>

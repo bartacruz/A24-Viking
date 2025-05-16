@@ -5,78 +5,88 @@
   <path>pedestal-new.ac</path>
 
   <animation>
-    <!-- Objets opaques -->
     <object-name>pedestal</object-name>
-    <object-name>InstrumentsBase</object-name>
-    <object-name>SwitchesLabels</object-name>
-    <object-name>BaseBatt</object-name>
-    <object-name>SwitchBatt</object-name>
-    <object-name>BaseAlt</object-name>
-    <object-name>SwitchAlt</object-name>
-    <object-name>BaseLand</object-name>
-    <object-name>SwitchLand</object-name>
-    <object-name>BaseNav</object-name>
-    <object-name>SwitchNav</object-name>
-    <object-name>BaseStrobe</object-name>
-    <object-name>SwitchStrobe</object-name>
-    <object-name>BaseFuel</object-name>
-    <object-name>SwitchFuel</object-name>
-    <object-name>BaseAvionics</object-name>
-    <object-name>SwitchAvionics</object-name>
-
-    <!-- Objets transparents -->
   </animation>
 
+  <effect>
+	<inherits-from>Effects/model-interior</inherits-from>
+	<parameters>
+		<dirt-factor>0.2</dirt-factor>
+		<contrast>0.75</contrast>
+	</parameters>
+	<object-name>pedestal</object-name>
+  </effect>
+
+
+  <model>
+    <path>../Instruments/westach_quad/westach_quad.xml</path>
+    <offsets>
+      <x-m>-0.527</x-m>
+      <y-m> 0</y-m>
+      <z-m> 0.315 </z-m>
+      <pitch-deg>-20</pitch-deg>
+    </offsets>
+  </model>
+
   <animation>
-		<type>pick</type>
-		<object-name>BaseBatt</object-name>
-		<object-name>SwitchBatt</object-name>
-		<action>
-			<button>0</button>
-			<repeatable>false</repeatable>
-			<binding>
-				<command>property-toggle</command>
+    <type>material</type>
+    <object-name>led.batt</object-name>
+	<object-name>led.alt</object-name>
+	<object-name>led.instr</object-name>
+    <emission>
+      <red>   2 </red>
+      <green> 2 </green>
+      <blue>  2 </blue>
+    </emission>
+  </animation>
+  
+  <animation>
+	<type>pick</type>
+	<object-name>btn.batt</object-name>
+	<object-name>led.batt</object-name>
+	<action>
+		<button>0</button>
+		<repeatable>false</repeatable>
+		<binding>
+			<command>property-toggle</command>
+			<property>controls/electric/battery-switch</property>
+		</binding>
+	</action>
+	<hovered>
+		<binding>
+			<command>set-tooltip</command>
+			<tooltip-id>Battery-switch</tooltip-id>
+			<label>Battery switch: %s</label>
+			<mapping>on-off</mapping>
+			<property>controls/electric/battery-switch</property>
+		</binding>
+	</hovered>
+  </animation>
+	<animation>
+		<type>select</type>
+		<object-name>led.batt</object-name>
+		<condition>
+			<and>
+				<property>systems/electrical/volts</property>
 				<property>controls/electric/battery-switch</property>
-			</binding>
-		</action>
-		<hovered>
-			<binding>
-				<command>set-tooltip</command>
-      			<tooltip-id>Battery-switch</tooltip-id>
-      			<label>Battery switch: %s</label>
-      			<mapping>on-off</mapping>
-				<property>controls/electric/battery-switch</property>
-			</binding>
-		</hovered>
+			</and>
+		</condition>
 	</animation>
 	
 	<animation>
-		<type>rotate</type>
-		<object-name>SwitchBatt</object-name>
-		<property>controls/electric/battery-switch</property>
-		<factor>30</factor>
-    <axis>
-        <x>0.0</x>
-        <y>1.0</y>
-        <z>0.0</z>
-    </axis>
-    <center>
-        <x-m>-0.494449</x-m>
-        <y-m>-0.04726</y-m>
-        <z-m>0.212422</z-m>
-    </center>
-	</animation>
-
-<animation>
 		<type>pick</type>
-		<object-name>BaseAlt</object-name>
-		<object-name>SwitchAlt</object-name>
+		<object-name>btn.alt</object-name>
+		<object-name>led.alt</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
 			<binding>
 				<command>property-toggle</command>
 				<property>controls/electric/engine/generator</property>
+			</binding>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/alt-switch</property>
 			</binding>
 		</action>
 		<hovered>
@@ -89,28 +99,21 @@
 			</binding>
 		</hovered>
 	</animation>
-	
 	<animation>
-		<type>rotate</type>
-		<object-name>SwitchAlt</object-name>
-		<property>controls/electric/engine/generator</property>
-		<factor>30</factor>
-    <axis>
-        <x>0.0</x>
-        <y>1.0</y>
-        <z>0.0</z>
-    </axis>
-    <center>
-        <x-m>-0.494449</x-m>
-        <y-m>-0.032622</y-m>
-        <z-m>0.212422</z-m>
-    </center>
+		<type>select</type>
+		<object-name>led.alt</object-name>
+		<condition>
+			<and>
+				<property>systems/electrical/volts</property>
+				<property>controls/electric/engine/generator</property>
+			</and>
+		</condition>
 	</animation>
 
-<animation>
+	<animation>
 		<type>pick</type>
-		<object-name>BasePump</object-name>
-		<object-name>SwitchPump</object-name>
+		<object-name>btn.alt</object-name>
+		<object-name>led.alt</object-name>
 		<action>
 			<button>0</button>
 			<repeatable>false</repeatable>
@@ -131,38 +134,69 @@
 	</animation>
 	
 	<animation>
-		<type>rotate</type>
-		<object-name>SwitchPump</object-name>
-		<property>controls/engines/engine[0]/fuel-pump</property>
-		<factor>30</factor>
-    <axis>
-        <x>0.0</x>
-        <y>1.0</y>
-        <z>0.0</z>
-    </axis>
-    <center>
-        <x-m>-0.49445</x-m>
-        <y-m>0.029491</y-m>
-        <z-m>0.212422</z-m>
-    </center>
+		<type>select</type>
+		<object-name>led.pump</object-name>
+		<condition>
+			<property>systems/electrical/output/fuel-pump</property>
+		</condition>
 	</animation>
 
-  <model>
+	<animation>
+		<type>pick</type>
+		<object-name>btn.instr</object-name>
+		<object-name>led.instr</object-name>
+		<action>
+			<button>0</button>
+			<repeatable>false</repeatable>
+			<binding>
+				<command>property-toggle</command>
+				<property>controls/electric/avionics-switch</property>
+			</binding>
+		</action>
+		<hovered>
+			<binding>
+				<command>set-tooltip</command>
+      			<tooltip-id>Avionics-switch</tooltip-id>
+      			<label>Avionics switch: %s</label>
+      			<mapping>on-off</mapping>
+				<property>controls/electric/avionics-switch</property>
+			</binding>
+		</hovered>
+	</animation>
+	<animation>
+		<type>select</type>
+		<object-name>led.instr</object-name>
+		<condition>
+			<property>systems/electrical/outputs/avionics-bus</property>
+		</condition>
+	</animation>
+	
+
+  <!-- <model>
     <path>../Instruments/magneto-switch/magneto-switch.xml</path>
     <offsets>
-      <x-m>  -0.484</x-m>
+      <x-m>  -0.452</x-m>
       <y-m>  -0.038 </y-m>
-      <z-m> 0.185 </z-m>
-      <pitch-deg>-25</pitch-deg>
+      <z-m> 0.09 </z-m>
+      <pitch-deg>-20</pitch-deg>
+    </offsets>
+  </model> -->
+  <model>
+    <path>../Instruments/key/key.xml</path>
+    <offsets>
+		<x-m>  -0.452</x-m>
+		<y-m>  -0.038 </y-m>
+		<z-m> 0.09 </z-m>
+      <pitch-deg>-20</pitch-deg>
     </offsets>
   </model>
   <model>
-    <path>../Instruments/fuel-amps/fuel-amps.xml</path>
+    <path>ignition.xml</path>
     <offsets>
-      <x-m>-0.527</x-m>
-      <y-m>-0.001</y-m>
-      <z-m> 0.322 </z-m>
-      <pitch-deg>-25</pitch-deg>
+		<x-m>  -0.452</x-m>
+		<y-m>  0.02 </y-m>
+		<z-m> 0.09 </z-m>
+      <pitch-deg>-20</pitch-deg>
     </offsets>
   </model>
 </PropertyList>

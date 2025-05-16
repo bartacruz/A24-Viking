@@ -103,10 +103,14 @@
       <file>Aircraft/A24-Viking/Nasal/light.nas</file>
       <file>Aircraft/A24-Viking/Nasal/convert.nas</file>
       <file>Aircraft/A24-Viking/Nasal/electrical.nas</file>
+      <file>Aircraft/A24-Viking/Nasal/magnetos.nas</file>
     </a24>
     <water>
       <file>Aircraft/A24-Viking/Nasal/onwater.nas</file>
     </water>
+    <ar3201>
+      <file>Aircraft/A24-Viking/Models/Instruments/ar-3201/ar3201.nas</file>
+    </ar3201>
   </nasal>
 
 </PropertyList>

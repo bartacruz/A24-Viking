@@ -3,51 +3,67 @@
 <PropertyList>
 
   <path>panel.ac</path>
-
+  
   <model>
-    <path>Instruments/ai/ai.xml</path>
-    <offsets>
-      <x-m>  0.197 </x-m>
-      <y-m> -0.117 </y-m>
-      <z-m>  0.021 </z-m>
-    </offsets>
+    <path>Instruments/rpm/rpm.xml</path>
+      <offsets>
+        <x-m> 0.220 </x-m>
+        <y-m>-0.255 </y-m>
+        <z-m> 0.02 </z-m>
+      </offsets>
   </model>
 
   <model>
-    <path>Instruments/asi/asi.xml</path>
+    <path>Instruments/asi-kt/asi-kt.xml</path>
     <offsets>
-      <x-m>  0.206 </x-m>
-      <y-m> -0.240 </y-m>
-      <z-m>  0.021 </z-m>
+      <x-m> 0.220 </x-m>
+      <y-m>-0.17 </y-m>
+      <z-m> 0.02 </z-m>
     </offsets>
   </model>
-
   <model>
-    <path>Instruments/Altimeter/Altimeter.xml</path>
+    <path>Instruments/alt/alt.xml</path>
     <offsets>
-      <x-m>  0.206 </x-m>
-      <y-m>  0.000 </y-m>
-      <z-m> -0.081 </z-m>
+      <x-m> 0.220 </x-m>
+      <y-m>-0.085 </y-m>
+      <z-m> 0.02 </z-m>
     </offsets>
   </model>
-
   <model>
     <path>Instruments/vsi/vsi.xml</path>
     <offsets>
-      <x-m> 0.206 </x-m>
-      <y-m> 0.000 </y-m>
-      <z-m> 0.021 </z-m>
+      <x-m>  0.220 </x-m>
+      <y-m>  0 </y-m>
+      <z-m>  0.02 </z-m>
+    </offsets>
+  </model>
+  <model>
+    <path>Instruments/turn/turn.xml</path>
+    <offsets>
+      <x-m> 0.220 </x-m>
+      <y-m> 0.085</y-m>
+      <z-m> 0.02 </z-m>
+    </offsets>
+  </model>
+  <model>
+    <path>Instruments/ar-3201/ar-3201.xml</path>
+    <offsets>
+      <x-m> 0.220 </x-m>
+      <y-m> 0.17</y-m>
+      <z-m> 0.02 </z-m>
     </offsets>
   </model>
 
+
   <model>
-    <path>Instruments/rpm/rpm.xml</path>
+    <path>Instruments/flydat/flydat.xml</path>
     <offsets>
-      <x-m> 0.206 </x-m>
-      <y-m> 0.117 </y-m>
-      <z-m> 0.021 </z-m>
+      <x-m> 0.220 </x-m>
+      <y-m> 0.16</y-m>
+      <z-m> -0.06 </z-m>
     </offsets>
   </model>
+
 
   <model>
     <path>Instruments/MagneticCompass/MagneticCompass.xml</path>
@@ -55,24 +71,6 @@
       <x-m> 0.213 </x-m>
       <y-m> 0.000 </y-m>
       <z-m> 0.103 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Instruments/empty/empty.xml</path>
-    <offsets>
-      <x-m>  0.206 </x-m>
-      <y-m> -0.117 </y-m>
-      <z-m> -0.081 </z-m>
-    </offsets>
-  </model>
-
-  <model>
-    <path>Instruments/empty/empty.xml</path>
-    <offsets>
-      <x-m>  0.206 </x-m>
-      <y-m>  0.208 </y-m>
-      <z-m> -0.047 </z-m>
     </offsets>
   </model>
 

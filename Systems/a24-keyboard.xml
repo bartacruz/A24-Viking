@@ -35,7 +35,25 @@
         </script>
       </binding>
     </key>
-
+    <key n="115">
+      <name>s</name>
+      <desc>Fire Starter on Selected Engine(s)</desc>
+      <binding> <!-- Starter -->
+        <condition>
+          <property>/controls/switches/starterkey-insert</property>
+        </condition>
+        <command>property-assign</command>
+        <property>/controls/switches/starter</property>
+        <value>1</value>
+      </binding>
+      <mod-up>
+        <binding>
+          <command>property-assign</command>
+          <property>/controls/switches/starter</property>
+          <value>0</value>
+        </binding>
+      </mod-up>
+    </key>
     <key n="125">
       <name>}</name>
       <desc>Autostart/Autostop</desc>

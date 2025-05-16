@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<PropertyList>
+
+  <path>ignition.ac</path>
+
+  <animation>
+    <object-name>plaque</object-name>
+    <object-name>handles</object-name>
+  </animation>
+  <animation>
+    <type>pick</type>
+    <object-name>ign1</object-name>
+    <action>
+      <button>0</button>
+      <repeatable>false</repeatable>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/engines/engine[0]/ignition0</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ign1</object-name>
+    <property>/controls/engines/engine[0]/ignition0</property>
+    <factor> 60 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+  <animation>
+    <type>pick</type>
+    <object-name>ign2</object-name>
+    <action>
+      <button>0</button>
+      <binding>
+        <command>property-toggle</command>
+        <property>/controls/engines/engine[0]/ignition1</property>
+      </binding>
+      <binding>
+        <command>property-toggle</command>
+        <property>/sim/model/sound/click</property>
+      </binding>
+    </action>
+  </animation>
+
+  <animation>
+    <type>rotate</type>
+    <object-name>ign2</object-name>
+    <property>/controls/engines/engine[0]/ignition1</property>
+    <factor> 60 </factor>
+    <axis>
+      <x>  0 </x>
+      <y> -1 </y>
+      <z>  0 </z>
+    </axis>
+  </animation>
+
+
+  
+  </PropertyList>

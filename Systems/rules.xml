@@ -5,6 +5,12 @@
   <property-rule n="100">
     <path>Aircraft/A24-Viking/Systems/glass-rain.xml</path>
   </property-rule>
+  <property-rule n="101">
+    <path>Aircraft/A24-Viking/Systems/props.xml</path>
+</property-rule>
+<property-rule n="102">
+  <path>Aircraft/A24-Viking/Systems/starter.xml</path>
+</property-rule>
   <vacuum>
     <name>vacuum</name>
     <number>0</number>

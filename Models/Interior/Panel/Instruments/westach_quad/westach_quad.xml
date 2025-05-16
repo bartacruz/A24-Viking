@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+
+<PropertyList>
+	
+	<path>westach_quad.ac</path>
+	
+	<animation>
+		<type>material</type>
+		<object-name>base</object-name>
+		<object-name>fuel.needle</object-name>
+		<object-name>fueltemp.needle</object-name>
+		<object-name>oat.needle</object-name>
+		<object-name>volts.needle</object-name>
+		<emission>
+			<red>   0.07 </red>
+			<green> 0.04 </green>
+			<blue>  0.04 </blue>
+			<factor-prop>systems/electrical/outputs/instrument-lights</factor-prop>
+		</emission>
+	</animation>
+	<animation>
+		<type>noshadow</type>
+		<object-name>glass</object-name>
+	</animation>
+	
+	<effect>
+		<inherits-from>../../../../Effects/Glass/glass</inherits-from>
+		<object-name>glass</object-name>
+	</effect>
+	
+	<animation>
+		<type>rotate</type>
+		<object-name>oat.needle</object-name>
+		<property>/environment/temperature-degc</property>
+		<interpolation>
+			<entry><ind>-50</ind><dep> 5 </dep></entry>
+			<entry><ind>-30 </ind><dep>17  </dep></entry>
+			<entry><ind> 0</ind><dep>56  </dep></entry>
+			<entry><ind> 30</ind><dep>  95 </dep></entry>
+			<entry><ind> 50</ind><dep> 107 </dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<y-m>0.0</y-m>
+			<z-m>-0.013021</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>fuel.needle</object-name>
+		<property>/consumables/fuel/tank[0]/indicated-level-norm</property>
+		<!-- <factor>-1</factor> -->
+		<interpolation>
+			<entry><ind>0</ind><dep> -5 </dep></entry>
+			<entry><ind>0.5</ind><dep>-56  </dep></entry>
+			<entry><ind>1</ind><dep>-95 </dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<y-m>0.0</y-m>
+			<z-m>0.013021</z-m>
+		</center>
+	</animation>
+
+	<animation>
+		<type>rotate</type>
+		<object-name>fueltemp.needle</object-name>
+		<property>fdm/jsbsim/instrumentation/westach_quad/fueltemp-needle-deg</property>
+		<factor>-1</factor>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<y-m>-0.013021</y-m>
+			<z-m>0.0</z-m>
+		</center>
+	</animation>
+	<animation>
+		<type>rotate</type>
+		<object-name>volts.needle</object-name>
+		<property>/systems/electrical/volts</property>
+		<interpolation>
+			<entry><ind>6</ind><dep> 5 </dep></entry>
+			<entry><ind>16</ind><dep>95 </dep></entry>
+		</interpolation>
+		<axis>
+			<x>1</x>
+			<y>0</y>
+			<z>0</z>
+		</axis>
+		<center>
+			<y-m>0.013021</y-m>
+			<z-m>0.0</z-m>
+		</center>
+	</animation>
+	
+</PropertyList>

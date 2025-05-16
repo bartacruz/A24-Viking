@@ -46,6 +46,6 @@
     <elevator-trim     type="double"> 0.000 </elevator-trim>
   </flight>
   <switches>
-    <starterkey-insert type="bool">true</starterkey-insert>
+    <starterkey-insert type="bool">0</starterkey-insert>
   </switches>
 </PropertyList>
