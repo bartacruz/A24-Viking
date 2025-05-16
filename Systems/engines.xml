@@ -13,6 +13,8 @@
     <egt-degC             type="float">0</egt-degC>
     <egt-degf             type="float">40</egt-degf>
     <oil-temperature-degC type="float">0</oil-temperature-degC>
+    <ignition0       type="bool">false</ignition0>
+    <ignition1       type="bool">false</ignition1>
   </engine>
 
 </PropertyList>

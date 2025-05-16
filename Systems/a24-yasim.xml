@@ -19,18 +19,19 @@
 <airplane mass="969" version="YASIM_VERSION_CURRENT" mtow-lbs="1652">
 
   <!-- Approach configuration -->
-  <approach speed="37" aoa="4" fuel="0.2">
-    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.2"/>
+  <!-- <approach speed="37" aoa="4" fuel="0.2"> -->
+  <approach speed="45" aoa="4" fuel="0.2">
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.3"/>
     <control-setting axis="/controls/engines/engine[0]/mixture"  value="1"/>
-    <control-setting axis="/controls/flight/flaps"               value="1"/>
+    <control-setting axis="/controls/flight/flaps"               value="2"/>
     <control-setting axis="/sim/weight[0]/weight-lb"             value ="180"/>
     <control-setting axis="/sim/weight[1]/weight-lb"             value ="180"/>
   </approach>
 
   <!-- Cruise configuration -->
   <cruise speed="75" alt="6000" fuel="0.7">
-    <control-setting axis="/controls/engines/engine[0]/throttle" value="1"/>
-    <control-setting axis="/controls/engines/engine[0]/mixture"  value="1"/>
+    <control-setting axis="/controls/engines/engine[0]/throttle" value="0.8"/>
+    <control-setting axis="/controls/engines/engine[0]/mixture"  value="0.8"/>
     <control-setting axis="/controls/flight/flaps"               value="0"/>
     <control-setting axis="/sim/weight[0]/weight-lb"             value ="180"/>
     <control-setting axis="/sim/weight[1]/weight-lb"             value ="180"/>
@@ -153,17 +154,19 @@
        diameter: 1,80 m
        Mass        :     60 kg  ( 132.3 lb  )
        Displacment : 1211.2 cm3 ( 73.91 in3 )
+       Gear ratio 0.411
   -->
   <propeller x="2.162" y="0.0" z="0.689"
              mass="132.5"
-             moment="3.24"
+             moment="1.24"
              radius="0.90"
              cruise-power="90"
-             cruise-rpm="5500"
+             cruise-rpm="2200"
              cruise-speed="75"
              cruise-alt="6000"
              takeoff-power="100"
-             takeoff-rpm="5800">
+             takeoff-rpm="2400"
+             gear-ratio="0.411">
              <actionpt x="2.636" y="0.0" z="0.689" />
              <piston-engine eng-rpm="5800"
                             eng-power="100"
@@ -242,7 +245,7 @@
         spring="6"
         damp="8"
         sfric="0.4"
-        dfric="0.1"
+        dfric="0.2"
         on-water="1"
         on-solid="0"
         reduce-friction-by-extension="1.1"
@@ -337,7 +340,9 @@
         reduce-friction-by-extension="0.9"
         speed-planing="25"
         spring-factor-not-planing="3">
-        <control-input axis="/controls/gear/water-rudder-pos" control="STEER" invert ="true" square="true"/>
+        <!-- <control-input  control="STEER"  axis="/controls/flight/rudder" invert ="true" src0="-1.0" src1="1.0" dst0="-0.2" dst1="0.2"/> --> -->
+        <!-- <control-input axis="/controls/gear/water-rudder-pos" control="STEER" invert ="true" square="true"/> -->
+        <control-input axis="/controls/flight/rudder" control="STEER" invert ="true" square="true"/>
   </gear>
 
   <tank x="0.456" y="0" z="-0.310" capacity="56"/>
