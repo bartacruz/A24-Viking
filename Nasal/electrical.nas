@@ -66,7 +66,8 @@ var avionics_switch = e.Switch.new("master-avionics","/controls/electric/avionic
 var avionics_bus = e.Bus.new("avionics-bus");
 electrical.connect(main_bus,avionics_switch,avionics_bus);
 electrical.connect(avionics_bus, e.Load.new("turn-coordinator",1.0,"/controls/electric/avionics-switch"));
-electrical.connect(avionics_bus, e.Load.new("gps",1.0,"/controls/electric/avionics-switch"));
+electrical.connect(avionics_bus, e.Load.new("gps",0.2,"/controls/electric/avionics-switch"));
+electrical.connect(avionics_bus, e.Load.new("eis",0.2,"/controls/electric/avionics-switch"));
 var radio_breaker = electrical.connect(avionics_bus, e.Breaker.new("radio",7.5));
 
 electrical.add_instrument(radio_breaker, "comm[0]",0.5);

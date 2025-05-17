@@ -9,10 +9,10 @@
         <type>material</type>
         <object-name>status</object-name>
         <condition>
-            <equals>
-                <property>aircraft/flydat/ison</property>
-                <value>1</value>
-            </equals>
+            <greater-than>
+                <property>systems/electrical/outputs/eis</property>
+                <value>6</value>
+            </greater-than>
         </condition>
         <emission>
             <red>0</red>
@@ -29,10 +29,10 @@
         <object-name>oiltemp</object-name>
         <object-name>oilpress</object-name>
         <condition>
-            <equals>
-                <property>aircraft/flydat/ison</property>
-                <value>1</value>
-            </equals>
+            <greater-than>
+                <property>systems/electrical/outputs/eis</property>
+                <value>6</value>
+            </greater-than>
         </condition>
         <specular>
             <red>1</red>
@@ -49,10 +49,10 @@
         <object-name>oilpress</object-name>
         <type>select</type>
         <condition>
-            <equals>
-                <property>aircraft/flydat/ison</property>
-                <value>1</value>
-            </equals>
+            <greater-than>
+                <property>systems/electrical/outputs/eis</property>
+                <value>6</value>
+            </greater-than>
         </condition>
     </animation>
 
@@ -72,7 +72,7 @@
 
         <!-- A number from a property -->
         <type type="string">number-value</type>
-        <property type="string">sim/multiplay/generic/float[13]</property>
+        <property type="string">engines/engine/prop-rpm</property>
         <factor type="double">0.0</factor> <!-- optional, scale the property's value -->
         <format type="string">%.0f</format> <!-- sprintf() format to display -->
         <truncate type="bool">false</truncate> <!-- truncate to an integer value -->
@@ -137,7 +137,7 @@
 
         <!-- A number from a property -->
         <type type="string">number-value</type>
-        <property type="string">engines/engine/egt-degc</property>
+        <property type="string">engines/engine/egt-degC</property>
         <factor type="double">0.0</factor> <!-- optional, scale the property's value -->
         <format type="string">%.0f</format> <!-- sprintf() format to display -->
         <truncate type="bool">false</truncate> <!-- truncate to an integer value -->
@@ -202,7 +202,7 @@
 
         <!-- A number from a property -->
         <type type="string">number-value</type>
-        <property type="string">engines/engine/cht-degc</property>
+        <property type="string">engines/engine/cht-degC</property>
         <factor type="double">0.0</factor> <!-- optional, scale the property's value -->
         <format type="string">%.0f</format> <!-- sprintf() format to display -->
         <truncate type="bool">false</truncate> <!-- truncate to an integer value -->
@@ -267,7 +267,7 @@
 
         <!-- A number from a property -->
         <type type="string">number-value</type>
-        <property type="string">engines/engine/oil-temperature-degc</property>
+        <property type="string">engines/engine/oil-temperature-degC</property>
         <factor type="double">0.0</factor> <!-- optional, scale the property's value -->
         <format type="string">%.0f</format> <!-- sprintf() format to display -->
         <truncate type="bool">false</truncate> <!-- truncate to an integer value -->
