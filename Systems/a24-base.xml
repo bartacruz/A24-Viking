@@ -108,9 +108,9 @@
     <water>
       <file>Aircraft/A24-Viking/Nasal/onwater.nas</file>
     </water>
-    <ar3201>
-      <file>Aircraft/A24-Viking/Models/Instruments/ar-3201/ar3201.nas</file>
-    </ar3201>
+    <ar6201>
+			<file>Aircraft/Instruments-3d/ar-6201/ar6201.nas</file>
+		</ar6201>
   </nasal>
 
 </PropertyList>

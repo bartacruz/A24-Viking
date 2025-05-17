@@ -46,7 +46,7 @@
     </offsets>
   </model>
   <model>
-    <path>Instruments/ar-3201/ar-3201.xml</path>
+    <path>/Aircraft/Instruments-3d/ar-6201/ar-6201.xml</path>
     <offsets>
       <x-m> 0.220 </x-m>
       <y-m> 0.17</y-m>
